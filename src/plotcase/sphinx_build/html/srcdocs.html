@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Source Documentation &mdash; plotcase 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="plotcase 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="Package Metadata" href="pkgdocs.html" />
+    <link rel="prev" title="Usage Guide" href="usage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pkgdocs.html" title="Package Metadata"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Usage Guide"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">plotcase 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="source-documentation">
+<span id="plotcase-src-label"></span><h1>Source Documentation<a class="headerlink" href="#source-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-plotcase.plotcase">
+<span id="plotcase-py"></span><span id="plotcase-plotcase-py"></span><span id="index-0"></span><h2>plotcase.py<a class="headerlink" href="#module-plotcase.plotcase" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="plotcase.plotcase.PlotCaseIterator">
+<em class="property">class </em><tt class="descclassname">plotcase.plotcase.</tt><tt class="descname">PlotCaseIterator</tt><big>(</big><em>cases</em><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.4)"><tt class="xref py py-class docutils literal"><span class="pre">list</span></tt></a></p>
+<p>An iterator that returns <tt class="xref py py-class docutils literal"><span class="pre">Case</span></tt> objects from a passed-in iterator
+of cases. This can be useful for runtime-generated cases from an
+optimizer, etc.</p>
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseIterator.get_attributes">
+<tt class="descname">get_attributes</tt><big>(</big><em>io_only=True</em><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseIterator.get_attributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseIterator.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>We need a custom get_attributes because we aren&#8217;t using Traits to
+manage our changeable settings. This is unfortunate and should be
+changed to something that automates this somehow.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="plotcase.plotcase.PlotCaseRecorder">
+<em class="property">class </em><tt class="descclassname">plotcase.plotcase.</tt><tt class="descname">PlotCaseRecorder</tt><big>(</big><em>pause=0.05</em>, <em>logscale=False</em>, <em>title='PlotCaseRecorder Convergence Plot'</em><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>A CaseRecorder that plots convergence using matplotlib.</p>
+<p>The plot is automatically set up with separate curves for each parameter, plus one for the objective.</p>
+<p>The legend in the plot also acts as a toggle switch: clicking on any parameter in the legend will enable/disable that data in the plot.</p>
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.close">
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does nothing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.getCount">
+<tt class="descname">getCount</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.getCount"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.getCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.get_attributes">
+<tt class="descname">get_attributes</tt><big>(</big><em>io_only=True</em><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.get_attributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>We need a custom get_attributes because we aren&#8217;t using Traits to
+manage our changeable settings. This is unfortunate and should be
+changed to something that automates this somehow.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.get_iterator">
+<tt class="descname">get_iterator</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.get_iterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.get_iterator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.get_parameters">
+<tt class="descname">get_parameters</tt><big>(</big><em>case</em><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.get_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.get_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.onpick">
+<tt class="descname">onpick</tt><big>(</big><em>event</em><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.onpick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.onpick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.plot_on_graph">
+<tt class="descname">plot_on_graph</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.plot_on_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.plot_on_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.record">
+<tt class="descname">record</tt><big>(</big><em>case</em><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.record"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plotcase.plotcase.PlotCaseRecorder.startup">
+<tt class="descname">startup</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/plotcase/plotcase.html#PlotCaseRecorder.startup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.plotcase.PlotCaseRecorder.startup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nothing needed for a plot case.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-plotcase.test.test_plotcase">
+<span id="test-plotcase-py"></span><span id="plotcase-test-test-plotcase-py"></span><span id="index-1"></span><h2>test_plotcase.py<a class="headerlink" href="#module-plotcase.test.test_plotcase" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="plotcase.test.test_plotcase.PlotCaseRecorderTestCase">
+<em class="property">class </em><tt class="descclassname">plotcase.test.test_plotcase.</tt><tt class="descname">PlotCaseRecorderTestCase</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="reference internal" href="_modules/plotcase/test/test_plotcase.html#PlotCaseRecorderTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.test.test_plotcase.PlotCaseRecorderTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></tt></p>
+<dl class="method">
+<dt id="plotcase.test.test_plotcase.PlotCaseRecorderTestCase.setUp">
+<tt class="descname">setUp</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/plotcase/test/test_plotcase.html#PlotCaseRecorderTestCase.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.test.test_plotcase.PlotCaseRecorderTestCase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="plotcase.test.test_plotcase.PlotCaseRecorderTestCase.tearDown">
+<tt class="descname">tearDown</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/plotcase/test/test_plotcase.html#PlotCaseRecorderTestCase.tearDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#plotcase.test.test_plotcase.PlotCaseRecorderTestCase.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Source Documentation</a><ul>
+<li><a class="reference internal" href="#module-plotcase.plotcase">plotcase.py</a></li>
+<li><a class="reference internal" href="#module-plotcase.test.test_plotcase">test_plotcase.py</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="previous chapter">Usage Guide</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pkgdocs.html"
+                        title="next chapter">Package Metadata</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/srcdocs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pkgdocs.html" title="Package Metadata"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="Usage Guide"
+             >previous</a> |</li>
+        <li><a href="index.html">plotcase 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013 Mechanical Solutions Inc..
+      Last updated on Oct 30, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

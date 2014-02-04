@@ -1,0 +1,35 @@
+
+.. _plotcase_src_label:
+
+
+====================
+Source Documentation
+====================
+
+        
+.. index:: plotcase.py
+
+.. _plotcase.plotcase.py:
+
+plotcase.py
+-----------
+
+.. automodule:: plotcase.plotcase
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+        
+.. index:: test_plotcase.py
+
+.. _plotcase.test.test_plotcase.py:
+
+test_plotcase.py
+----------------
+
+.. automodule:: plotcase.test.test_plotcase
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+        

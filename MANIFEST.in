@@ -1,0 +1,3 @@
+graft src/plotcase/sphinx_build/html
+recursive-include src/plotcase/test *.py
+
